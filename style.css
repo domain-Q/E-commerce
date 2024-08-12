@@ -857,6 +857,7 @@ footer {
   justify-content: space-between;
   background-color: var(--buttonColor);
   color: #fff;
+  gap: 5px;
   padding: 1rem 2rem;
 }
 

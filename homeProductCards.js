@@ -9,7 +9,9 @@ export const showProductContainer = (product) => {
     return false;
   }
 
-  console.log('sdsdsd',productTemplate);
+  // console.log(productTemplate);
+
+  if(window.location.href.includes("/about.html") ||window.location.href.includes("/contact.html")) return;
   
   product?.forEach((curProd) => {
     const { brand, category, description, id, image, name, price, stock } =
