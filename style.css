@@ -853,6 +853,8 @@ footer {
 /**** Our Home product section Ends  ****/
 
 #cartValue {
+  display: flex;
+  justify-content: space-between;
   background-color: var(--buttonColor);
   color: #fff;
   padding: 1rem 2rem;
@@ -861,7 +863,9 @@ footer {
 .add-to-cart-button,
 .contact-btn,
 .hero-btn a {
+  
   font-weight: 500;
+  flex-direction: column;
   font: inherit;
   border-radius: 6px;
   border: 0;
@@ -869,7 +873,7 @@ footer {
   background-color: var(--buttonColor);
   color: #fff;
   font-size: 1.6rem;
-  /* margin-top: 1.2rem; */
+  
 
   &:hover {
     box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.16),
