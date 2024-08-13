@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(./public/images/bcg.avif) no-repeat center center/cover;
+    min-height: 100vh;
+    padding-top: 80px; /* Space for the navbar */
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 20%;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo span {
+    /* font-size: 24px; */
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+   font-weight: 600;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #e67e22;
+}
+
+.add-to-cart-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #444;
+}
+
+.add-to-cart-button i {
+    margin-right: 8px;
+}
+
+#cartValue {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Container Styling */
+.container-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    margin-top: 100px; /* Adjust for navbar height */
+}
+
+/* Form Box Styling */
+.form-box {
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #555;
+}
+
+/* Social Login Styling */
+.social-login {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.google {
+    background: #db4437;
+    color: #fff;
+}
+
+.facebook {
+    background: #3b5998;
+    color: #fff;
+}
+
+.social-btn:hover {
+    opacity: 0.9;
+}
+
+/* Paragraph and Link Styling */
+p {
+    color: #555;
+    margin-top: 20px;
+}
+
+p a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #555;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
+}
