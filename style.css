@@ -1194,7 +1194,7 @@ footer {
 
   .section-navbar .container {
     flex-direction: column;
-    gap: 3.2rem;
+    gap: 3rem;
   }
 
   .section-why--choose {
