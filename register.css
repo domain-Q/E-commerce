@@ -9,7 +9,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url(./public/images/bcg.avif) no-repeat center center/cover;
+    background-image: linear-gradient(
+        to top right,
+        #3d86fa,
+        #4484fb,
+        #679eff,
+        #b3d2ff,
+        #ebf3fe
+      );
     min-height: 100vh;
     padding-top: 80px; /* Space for the navbar */
 }
@@ -204,9 +211,18 @@ p a:hover {
 @media (max-width: 768px) {
     .navbar ul {
         flex-direction: column;
+        flex-wrap: wrap;
     }
 
     .nav-item {
         margin-bottom: 10px;
+    }
+    .navbar{
+        flex-direction: column;
+        /* align-items: center; */
+    }
+    .navbar{
+        flex-direction: column;
+        /* align-items: center; */
     }
 }

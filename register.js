@@ -27,6 +27,7 @@ submit.addEventListener("click", function (event) {
   event.preventDefault();
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+console.log('data',email , password);
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -61,14 +62,14 @@ googleLogin.addEventListener("click", function () {
     });
 });
 
-function updateProfile(user){
-    const username = user.displayName;
-    const userEmail = user.email;
-    const userProfilePicture = user.photoURL;
+// function updateProfile(user){
+//     const username = user.displayName;
+//     const userEmail = user.email;
+//     const userProfilePicture = user.photoURL;
 
-    document.getElementById("userName").textContent = username;
-    document.getElementById("userEmail").textContent = userEmail;
-    document.getElementById("userProfilePicture").textContent = userProfilePicture;
-}
-updateProfile();
+//     document.getElementById("userName").textContent = username;
+//     document.getElementById("userEmail").textContent = userEmail;
+//     document.getElementById("userProfilePicture").textContent = userProfilePicture;
+// }
+// updateProfile();
 

@@ -11,7 +11,7 @@ export const showProductContainer = (product) => {
 
   // console.log(productTemplate);
 
-  if(window.location.href.includes("/about.html") ||window.location.href.includes("/contact.html")) return;
+  if(window.location.href.includes("/about.html") ||window.location.href.includes("/contact.html"))return;
   
   product?.forEach((curProd) => {
     const { brand, category, description, id, image, name, price, stock } =
