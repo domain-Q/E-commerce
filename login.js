@@ -30,7 +30,10 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
     .then((userCredential) => {
     
       const user = userCredential.user;
+      localStorage.setItem("user", JSON.stringify(user))
      window.location.href="index.html"
+      console.log(user);
+      
     })
     .catch((error) => {
       const errorCode = error.code;

@@ -20,47 +20,55 @@ const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
 
-//inputs
 
 const submit = document.getElementById("submit");
-submit.addEventListener("click", function (event) {
-  event.preventDefault();
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-console.log('data',email , password);
+if(submit) {
+  submit.addEventListener("click", function (event) {
+    event.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+  console.log('data',email , password);
+  
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+        document.getElementById("signup-form").style.display = "none";
+        document.querySelector(".form-box").style.display = "block";
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage);
+      });
+  });
+}
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed up
-      const user = userCredential.user;
-      document.getElementById("email").value = "";
-      document.getElementById("password").value = "";
-      document.getElementById("signup-form").style.display = "none";
-      document.querySelector(".form-box").style.display = "block";
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorMessage);
-    });
-});
 
 const googleLogin = document.getElementById("google-login-btn");
-googleLogin.addEventListener("click", function () {
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const user = result.user;
-      console.log(user);
-      window.location.href="/index.html"
-      
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-   
-    });
-});
+if(googleLogin) {
+
+  googleLogin.addEventListener("click", function () {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const user = result.user;
+        console.log(user);
+        localStorage.setItem("user", JSON.stringify(user))
+        window.location.href="/index.html"
+        
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+     
+      });
+  });
+}
+
+
 
 // function updateProfile(user){
 //     const username = user.displayName;
